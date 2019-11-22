@@ -1,0 +1,169 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>loveliukexin</title>
+	<meta name="viewport" content="initial-scale=1, maximum-scale=1, user-scalable=no, width=device-width">
+    <link rel="stylesheet" href="jquery/bootstrap.min.css">
+    <link rel="stylesheet" href="layui/css/layui.css">
+    <link type="text/css"  href="jquery/3.css" rel="stylesheet ">
+    <script src="layui/layui.js"></script>
+	<script  src="jquery/jquery-3.3.1.js"></script>
+	<script src="jquery/bootstrap.min.js"></script>
+	<script src="jquery/jsized.snow.min.js" type="text/javascript"></script>
+</head>
+<style>
+	* {
+		margin: 0;
+		padding: 0;
+	}
+	.content {
+		widows: 100%;
+		background-image: url(image/love.jpg);
+		background-size: 100%;
+		background-repeat: no-repeat;
+		position: relative;
+
+	}
+	.box {
+		width: 70%;
+		height: 40%;
+		/*background-color: rgba(0,0,0,0.5);*/
+		position: absolute;
+		top: 16%;
+		left: 13%;
+	}
+
+	@media screen and (orientation:portrait){
+	    .tips{
+	        display:block;
+	    }
+	    .content {
+	    	display: none;
+	    }
+	}
+
+
+	@media screen and (orientation:landscape){
+	    .tips{
+	        display:none;
+	    }
+	    .content {
+	    	display: block;
+	    }
+    }
+    
+    .div{
+        width:200px;
+        height:100px;
+        position:relative;
+        animation-name:myfirst;
+        animation-duration:26s;
+        animation-timing-function:linear;
+        animation-delay:0s;
+        animation-iteration-count:infinite;
+        animation-direction:normal;
+        animation-play-state:running;
+        /* Safari and Chrome: */
+        -webkit-animation-name:myfirst;
+        -webkit-animation-duration:36s;
+        -webkit-animation-timing-function:linear;
+        -webkit-animation-delay:0s;
+        -webkit-animation-iteration-count:infinite;
+        -webkit-animation-direction:normal;
+        -webkit-animation-play-state:running;
+    }
+
+    @keyframes myfirst
+    {
+        0%   {background-image:url(image/01.jpg); left:16%; top:10%;}
+        25%  {background-image:url(image/02.jpg); left:66%; top:10%;}
+        50%  {background-image:url(image/03.jpg); left:66%; top:80%;}
+        75%  {background-image:url(image/04.jpg); left:16%; top:80%;}
+        100% {background-image:url(image/01.jpg); left:16%; top:10%;}
+    }
+
+    @-webkit-keyframes myfirst /* Safari and Chrome */
+    {
+        0%   {background-image:url(image/01.jpg); left:16%; top:10%;}
+        25%  {background-image:url(image/02.jpg); left:66%; top:10%;}
+        50%  {background-image:url(image/03.jpg); left:66%; top:80%;}
+        75%  {background-image:url(image/04.jpg); left:16%; top:80%;}
+        100% {background-image:url(image/01.jpg); left:16%; top:10%;}
+    }
+</style>
+<body style="overflow-y: hidden;">
+	<div class="content">
+        <div class="div"></div>
+		<div class="box">
+            <div id="react">
+                <div class="out_front">
+                    <img src="./image/11.jpg" class="out_pic">
+                </div>
+                <div class="out_back">
+                    <img src="./image/12.jpg" class="out_pic">
+                </div>
+                <div class="out_left">
+                    <img src="./image/13.jpg" class="out_pic">
+                </div>
+                <div class="out_right">
+                    <img src="./image/14.jpg" class="out_pic">
+                </div>
+                <div class="out_top">
+                    <img src="./image/15.jpg" class="out_pic">
+                </div>
+                <div class="out_bottom">
+                    <img src="./image/16.jpg" class="out_pic">
+                </div>
+                <span class="in_front">
+                    <img src="./image/17.jpg" class="in_pic">
+                </span>
+                <span class="in_back">
+                    <img src="./image/18.jpg" class="in_pic">
+                </span>
+                <span class="in_left">
+                    <img src="./image/19.jpg" class="in_pic">
+                </span>
+                <span class="in_right">
+                    <img src="./image/20.jpg" class="in_pic">
+                </span>
+                <span class="in_top">
+                    <img src="./image/21.jpg" class="in_pic">
+                </span>
+                <span class="in_bottom">
+                    <img src="./image/22.jpg" class="in_pic">
+                </span>
+            </div>
+			<div class="video">
+				<audio src="image/sjmh.mp3" autoplay="autoplay" loop="loop"></audio>
+			</div>
+			
+		</div>
+	</div>
+</body>
+<script>
+	$('.content').css('height', $(window).height())
+	$('.carousel').carousel({
+    interval: 2000
+})
+	window.onorientationchange = function(){ 
+    switch(window.orientation){ 
+        case -90: 
+        case 90: 
+            location.reload()
+        case 0: 
+        case 180: 
+             
+        break; 
+    } 
+	} 
+
+	/**
+   * This function takes 2 arguments
+   * First is the path to the directory with snowflake images
+   * Second is the maximum number of snowflakes, please do not
+   * set this number above 60 as it will impact the performance
+   */
+  createSnow('', 60);
+</script>
+</html>
